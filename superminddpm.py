@@ -133,7 +133,7 @@ class DDPM(nn.Module):
         return x_i
 
 
-def train_mnist(n_epoch: int = 100, device="cuda:0") -> None:
+def train_mnist(n_epoch: int = 100, device="cpu") -> None:
 
     ddpm = DDPM(eps_model=DummyEpsModel(1), betas=(1e-4, 0.02), n_T=1000)
     ddpm.to(device)
